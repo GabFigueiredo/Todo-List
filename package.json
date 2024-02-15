@@ -1,0 +1,17 @@
+{
+  "name": "todo-list",
+  "description": "",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "devDependencies": {
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Gabriel Figueiredo",
+  "license": "ISC"
+}

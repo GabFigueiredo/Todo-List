@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/style.css">
+    <title>To do</title>
+</head>
+<body>
+    <style> body { background-color: rgb(16, 16, 16); color: white; }</style>
+    <aside>
+        <div class="createTask">
+            <h2>Create Task</h2>
+            <form action="">
+                <fieldset>
+                    <legend>Task Name</legend>
+                    <input type="text" name="taskName" id="taskName" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Task Description</legend>
+                    <input type="text" name="taskDesc" id="taskDesc" required>
+                </fieldset>
+                <fieldset>
+                    <label for="choice">Task Priority</label>
+                    <select name="choice" id="choice" required>
+                        <option value="low">Low</option>
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                    </select>
+                </fieldset>
+                <input type="submit" id="submit">
+            </form>
+        </div>
+    </div>
+    <div class="priorityContainer">
+        <div class="container">
+            <p>Low Tasks</p>
+            <button></button>
+        </div>
+        <div class="container">
+            <p>Normal Tasks</p>
+            <button></button>
+        </div>
+        <div class="container">
+            <p>High Tasks</p>
+            <button></button>
+        </div>
+    </div>    
+    </aside>
+    <main>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
