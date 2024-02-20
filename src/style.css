@@ -62,7 +62,7 @@ aside {
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: rgb(33, 33, 33);
-    max-width: 600px;
+    min-width: 500px;
 }
 
 .contentContainer {
@@ -126,7 +126,7 @@ aside {
 
 .under-side {
     display: flex;
-    width: 90%;
+    width: 98%;
 }
 
 
@@ -137,8 +137,10 @@ aside {
 }
 
 .detail {
-    font-size: 40px;
-    max-width: 400px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0px;
+    max-width: 350px;
 }
 
 main {
@@ -162,3 +164,68 @@ main {
     background-color: crimson;
 }
 
+.done {
+    background-color: rgb(40, 40, 40);
+}
+
+fieldset {
+    padding-left: 0px;
+    border: 0;
+}
+
+input {
+    appearance: none;
+}
+
+input[type="text"] {
+    background-color: rgb(23, 23, 23);
+    border: 0;
+    border-radius: 5px;
+    height: 20px;
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: 0;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.desativado,
+.ativado {
+    background-color: rgb(33, 33, 33);
+    border: 0;
+}
+
+
+#low {
+    border: solid 1px green;
+    border-radius: 5px;
+}
+
+#normal {
+    border: solid 1px yellow;
+    border-radius: 5px;
+}
+
+#high {
+    border: solid 1px crimson;
+    border-radius: 5px;
+}
+
+.right-side button {
+    background-color: rgb(33, 33, 33);
+    border: solid 1px green;
+    border-radius: 5px;
+    
+}
+
+.right-side .checkBtnA {
+    background-color: green;
+    border: 0;
+    border-radius: 5px;
+}

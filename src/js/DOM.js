@@ -1,42 +1,28 @@
-export function createDOM(title, description, priority) {
+export function createDOM(title, description, priority, ID) {
     const main = document.querySelector("main")
+
+    // ORDER GOES BY: TYPE, CLASS, CONTENT, ID 
     
-    const contentContainer = document.createElement("div")
-    const rightSide = document.createElement("div");
-    const leftSide = document.createElement("div");
-    const taskContainer = document.createElement("div")
-    const colorContainer = document.createElement("div");
-    const checkBtn = document.createElement("button");
-    const taskTitle = document.createElement("p");
-    const details = document.createElement("p");
-    const deletImg = document.createElement("img");
-    deletImg.src = "../src/assets/trash-can-outline.svg";
-
-    rightSide.classList.add("right-side")
-    leftSide.classList.add("left-side")
-
-    taskContainer.classList.add("taskContainer")
-
-    colorContainer.classList.add(priority)
+    const contentContainer = createElement("div","contentContainer", "", "" );
+    const leftSide = createElement("div","left-side", "", "" );
+    const rightSide = createElement("div","right-side", "", "" );
+    const taskContainer = createElement("div","taskContainer", "", "" );
+    const colorContainer = createElement("div", priority, "", "" ); 
     colorContainer.classList.add("colorContainer")
+    const taskTitle = createElement("p","texto", title, "")
+    const details = createElement("p","desativado", "details", "" )
+    const checkBtn = createElement("button", "a", "" , "")
+    const deletImg = createElement("img", "delet", "details", "")
+    deletImg.src = "../src/assets/trash-can-outline.svg";
     
-    checkBtn.classList.add("active");
-    taskTitle.textContent = title
-
-    details.textContent = "details"
-    details.classList.add("desativado")
     details.addEventListener("click", function() {
-        createDetails()
-    })
-
-    function createDetails() {
         const underSide = document.createElement("div");
         const detail = document.createElement("p");
         detail.classList.add("detail")
-        
+    
         underSide.classList.add("under-side")
         detail.textContent = description
-        
+    
         if (details.classList.contains("desativado")) {
             details.classList.remove("desativado")
             details.classList.add("ativado")
@@ -48,15 +34,31 @@ export function createDOM(title, description, priority) {
             details.classList.add("desativado")
             const underSide = taskContainer.querySelector(".under-side")
             underSide.parentNode.removeChild(underSide)
-            
         }
-    }
+    })
+
+    checkBtn.addEventListener("click", function () {
+        if (checkBtn.classList.contains("a")) {
+            checkBtn.classList.remove('a');
+            checkBtn.classList.add("checkBtnA");
+            colorContainer.classList.remove(priority)
+            colorContainer.classList.add("done")
+        }
+        else {
+            checkBtn.classList.remove('checkBtnA');
+            checkBtn.classList.add("a");
+            colorContainer.classList.remove("done")
+            colorContainer.classList.add(priority)
+        }
+    })
 
     deletImg.addEventListener("click", function() {
         taskContainer.parentNode.removeChild(taskContainer);
+        console.log(ID)
+        localStorage.removeItem(ID)
     })
 
-    const leftResult = [taskTitle, details] ;
+    const leftResult = [taskTitle, details];
     const rightResult = [checkBtn, deletImg];
 
     leftResult.forEach(element => leftSide.appendChild(element))
@@ -71,5 +73,15 @@ export function createDOM(title, description, priority) {
     
     main.appendChild(taskContainer)
 
+}
+
+
+function createElement(type, className, elementContent, elementID) {
+    const newElement = document.createElement(type)
+    newElement.classList.add(className)
+    newElement.textContent = elementContent
+    newElement.setAttribute("id", elementID)
+
+    return newElement
 }
 
